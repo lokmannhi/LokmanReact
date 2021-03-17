@@ -1,22 +1,35 @@
-import React from 'react'
-import './App.css'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import NavBar from './Navigation/NavBar';
-import Home from './Pages/Home';
-import Projects from './Pages/Projects/Projects';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from "./Navigation/NavBar";
+import Home from "./Home";
+import Pokemon from "./Pages/Pokemon";
+import Quiz from "./Pages/Quiz";
+import Mandarin from "./Pages/Quiz/components/Mandarin";
+import Arabic from "./Pages/Quiz/components/Arabic";
+import UI from "./Pages/UI";
+import Testing from "./Pages/Testing";
+import Setting from "./Setting";
 
-function App() {
+import "./App.css";
+
+export default function App() {
   return (
-    <>
-    <Router>
-      <NavBar />
-      <Switch>
-        <Route path='/'exact component={Home} />
-        <Route path='/projects' component={Projects} />
-      </Switch>
-    </Router>
-    </>
+    <div className="App">
+      <Router>
+        <Navbar />
+        <Switch>
+          <div>
+            <Route path="/" exact component={Home} />
+            <Route path="/pokemon" component={Pokemon} />
+            <Route path="/quiz" exact component={Quiz} />
+            <Route path="/quiz/mandarin" component={Mandarin} />
+            <Route path="/quiz/arabic" component={Arabic} />
+            <Route path="/ui" exact component={UI} />
+            <Route path="/testing" exact component={Testing} />
+            <Route path="/setting" exact component={Setting} />
+          </div>
+        </Switch>
+      </Router>
+    </div>
   );
 }
-
-export default App;

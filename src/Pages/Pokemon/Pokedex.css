@@ -1,12 +1,8 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.App {
+.Pokedex {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 90vw;
+  overflow: hidden;
 }
