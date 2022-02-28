@@ -27,7 +27,7 @@ const NavBar = () => {
             <FAIcons.FaSchool />
           </li>
         </Link>
-        <Link style={{ textDecoration: "none", color: "black" }} to="/ui">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/zomin">
           <li>
             <TIIcons.TiDeviceLaptop />
           </li>
