@@ -19,7 +19,15 @@ const Comments = () => {
         <h1>Comments Page</h1>
         <br />
         <label>Filter by PostID: </label><input type='number' onChange={(e) => {setSearchID(e.target.value)}} />
-        {comments.map((c) => {
+        {comments
+        .filter((id) => {
+            if (+searchID === 0) {
+                return id
+            } else if (+id.postId === +searchID) {
+                return id
+            }
+        })
+        .map((c) => {
             return (
                 <div>
                     <br />
