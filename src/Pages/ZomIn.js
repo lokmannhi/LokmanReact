@@ -1,7 +1,7 @@
 import React from "react";
 import Index from './ZomIn/Index'
 
-const ZOMIN = () => {
+const Zomin = () => {
   return (
     <>
       <Index />
@@ -9,4 +9,4 @@ const ZOMIN = () => {
   )
 };
 
-export default ZOMIN;
+export default Zomin;

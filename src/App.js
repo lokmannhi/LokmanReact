@@ -6,7 +6,7 @@ import Pokemon from "./Pages/Pokemon";
 import Quiz from "./Pages/Quiz";
 import Mandarin from "./Pages/Quiz/components/Mandarin";
 import Arabic from "./Pages/Quiz/components/Arabic";
-import ZOMIN from "./Pages/ZomIn";
+import Zomin from "./Pages/ZomIn";
 import Testing from "./Pages/Testing";
 import Setting from "./Setting";
 
@@ -24,7 +24,7 @@ export default function App() {
             <Route path="/quiz" exact component={Quiz} />
             <Route path="/quiz/mandarin" component={Mandarin} />
             <Route path="/quiz/arabic" component={Arabic} />
-            <Route path="/zomin" exact component={ZOMIN} />
+            <Route path="/zomin" exact component={Zomin} />
             <Route path="/testing" exact component={Testing} />
             <Route path="/setting" exact component={Setting} />
           </div>
