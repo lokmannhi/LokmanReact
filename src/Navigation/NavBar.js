@@ -19,10 +19,15 @@ const NavBar = () => {
       <ul>
         <Link style={{ textDecoration: "none", color: "black" }} to="/pokemon">
           <li>
-            <CGIcons.CgPokemon />
+            <CGIcons.CgPokemon />Pokemon
           </li>
         </Link>
-        <Link style={{ textDecoration: "none", color: "black" }} to="/quiz">
+        <Link style={{ textDecoration: "none", color: "black" }} to="/imocha">
+          <li>
+          <TIIcons.TiPuzzleOutline />iMocha
+          </li>
+        </Link>
+        {/* <Link style={{ textDecoration: "none", color: "black" }} to="/quiz">
           <li>
             <FAIcons.FaSchool />
           </li>
@@ -36,7 +41,7 @@ const NavBar = () => {
           <li>
             <TIIcons.TiPuzzleOutline />
           </li>
-        </Link>
+        </Link> */}
       </ul>
       <Link
         style={{
