@@ -17,7 +17,7 @@ const Assessment = () => {
         })
     }, [])
 
-    const submit = () => {
+    const save = () => {
         axios.post('https://lokmannode.herokuapp.com/insert/users', {
             name: name,
             dateofbirth: dob,
@@ -87,9 +87,10 @@ const Assessment = () => {
           {state}
       </label>
       <br />
-      <button onClick={submit}>Submit</button>
+      <button onClick={save}>Save</button>
         </div>
             <br />
+            <h1>List of applicant</h1>
             <ol className="listed">
                 {list.map((item) => (
                     <li key={item.id}>
