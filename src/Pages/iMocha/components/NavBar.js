@@ -13,15 +13,9 @@ const NavBar = () => {
         <ul>
           <Link
             style={{ textDecoration: "none", color: "black" }}
-            to="/imocha/form"
+            to="/imocha/assessment"
           >
-            <li>Form</li>
-          </Link>
-          <Link
-            style={{ textDecoration: "none", color: "black" }}
-            to="/imocha/list"
-          >
-            <li>List</li>
+            <li>Assessment</li>
           </Link>
         </ul>
       </nav>

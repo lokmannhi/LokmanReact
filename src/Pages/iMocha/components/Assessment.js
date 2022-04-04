@@ -1,18 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from 'axios'
 
-const Home = () => {
+const Assessment = () => {
     const [name, setName] = useState("")
     const [dob, setDob] = useState("")
     const [address, setAddress] = useState("")
     const [poscode, setPoscode] = useState("")
     const [state, setState] = useState("Enter Poscode")
+    const [list, setList] = useState([])
+
+    useEffect(() => {
+        axios.get('https://lokmannode.herokuapp.com/get/users')
+        .then((res) => {
+            setList(res.data)
+            // console.log(res.data)
+        })
+    }, [])
 
     const submit = () => {
-        console.log(name, dob, address, poscode, state)
+        axios.post('https://lokmannode.herokuapp.com/insert/users', {
+            name: name,
+            dateofbirth: dob,
+            address: address,
+            poscode: poscode,
+            state: state
+        })
+
+        setList([
+            ...list,
+            { name: name, dateofbirth: dob, address: address, poscode: poscode, state: state }
+        ])
     }
 
   return (
     <div>
+        <div className="form">
       <br />
       <label>Name :
           <input
@@ -57,8 +79,8 @@ const Home = () => {
             if (poscode === "8000") {
                 setState("Johor")
             }
-            }}
-          />
+        }}
+        />
       </label>
       <br />
       <label>State :
@@ -66,8 +88,25 @@ const Home = () => {
       </label>
       <br />
       <button onClick={submit}>Submit</button>
+        </div>
+            <br />
+            <ol className="listed">
+                {list.map((item) => (
+                    <li key={item.id}>
+                        {item.name}
+                        <br />
+                        {item.dateofbirth}
+                        <br />
+                        {item.address}
+                        <br />
+                        {item.poscode}
+                        <br />
+                        {item.state}
+                    </li>
+                ))}
+            </ol>
     </div>
   );
 };
 
-export default Home;
+export default Assessment;
